@@ -9,8 +9,10 @@ public class Chat : MonoBehaviour
     
     public UnityEngine.UI.InputField ChatInputField;
     public Text SpeechBubble;
-    private bool DisableSend = false;
     PhotonView view;
+
+    private bool DisableSend = false;
+    private string text;
 
     void Start()
     {
@@ -29,14 +31,28 @@ public class Chat : MonoBehaviour
                 if (ChatInputField.text != "" && ChatInputField.text.Length > 0 && Input.GetKeyDown("space"))
                 {
                     DisableSend = true;
-                    SpeechBubble.text = ChatInputField.text;
+                    text = ChatInputField.text;
                     ChatInputField.text = "";
-                    Debug.Log("hi");
-                    StartCoroutine("Remove");
+                    view.RPC("OnInput", RpcTarget.All, text);
+                    Debug.Log("8");
                 }
             }
         }
     }
+
+[PunRPC]
+public void OnInput (string usedString)
+{
+    DisplayWord(usedString);
+    Debug.Log("9");
+}
+
+public void DisplayWord (string usedString)
+{
+    SpeechBubble.text = usedString;
+    StartCoroutine("Remove");
+    Debug.Log("10");
+}
 
     IEnumerator Remove()
     {

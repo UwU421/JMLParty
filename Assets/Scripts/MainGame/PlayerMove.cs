@@ -29,4 +29,13 @@ public class PlayerMove : MonoBehaviour
             transform.Translate(movement);
         }
     }
+
+    void OnApplicationQuit()
+    {
+        if(view.IsMine)
+        {
+            Object.Destroy(this.gameObject);
+            Debug.Log("wow");
+        }
+    }
 }
