@@ -7,7 +7,7 @@ using Photon.Pun;
 public class Chat : MonoBehaviour
 {
     
-    public InputField ChatInputField;
+    public UnityEngine.UI.InputField ChatInputField;
     public Text SpeechBubble;
     private bool DisableSend = false;
     PhotonView view;
@@ -15,14 +15,17 @@ public class Chat : MonoBehaviour
     void Start()
     {
         view = GetComponent<PhotonView>();
+        ChatInputField = GameObject.Find("input_chat").GetComponent<InputField>();
     }
 
     private void Update() 
     {
         if (view.IsMine)
         {
+            Debug.Log("1");
             if (!DisableSend && ChatInputField.isFocused)
             {
+                Debug.Log("2");
                 if (ChatInputField.text != "" && ChatInputField.text.Length > 0 && Input.GetKeyDown("space"))
                 {
                     DisableSend = true;
