@@ -35,7 +35,6 @@ public class PlayerMove : MonoBehaviour
         if(view.IsMine)
         {
             Object.Destroy(this.gameObject);
-            Debug.Log("wow");
         }
     }
 }

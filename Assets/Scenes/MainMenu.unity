@@ -1532,8 +1532,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4c05c4ab05ca5ca4eb11a467cf798e77, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  createInput: {fileID: 1861711619}
-  joinInput: {fileID: 1861711619}
+  roomCodeInput: {fileID: 1861711619}
+  nickInput: {fileID: 1419118104}
 --- !u!4 &1732213095
 Transform:
   m_ObjectHideFlags: 0

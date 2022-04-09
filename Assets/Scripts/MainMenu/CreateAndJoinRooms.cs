@@ -7,17 +7,19 @@ using Photon.Pun;
 public class CreateAndJoinRooms : MonoBehaviourPunCallbacks
 {
 
-    public InputField createInput;
-    public InputField joinInput;
+    public InputField roomCodeInput;
+    public InputField nickInput;
 
     public void CreateRoom()
     {
-        PhotonNetwork.CreateRoom(createInput.text);
+        PhotonNetwork.NickName = nickInput.text;
+        PhotonNetwork.CreateRoom(roomCodeInput.text);
     }
 
     public void JoinRoom()
     {
-        PhotonNetwork.JoinRoom(joinInput.text);
+        PhotonNetwork.NickName = nickInput.text;
+        PhotonNetwork.JoinRoom(roomCodeInput.text);
     }
 
     public override void OnJoinedRoom()
