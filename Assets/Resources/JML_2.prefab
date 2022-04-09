@@ -14,6 +14,7 @@ GameObject:
   - component: {fileID: 7274931720030409986}
   - component: {fileID: 5752349999948890522}
   - component: {fileID: 5471422174916977472}
+  - component: {fileID: 5602161076555888379}
   m_Layer: 5
   m_Name: RawImage
   m_TagString: Untagged
@@ -91,6 +92,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   speedX: 125
   speedY: 125
+  voiceManager: {fileID: 0}
 --- !u!114 &5752349999948890522
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -147,6 +149,24 @@ MonoBehaviour:
     InterpolateOption: 0
     InterpolateMoveTowardsSpeed: 1
     InterpolateLerpSpeed: 0
+--- !u!114 &5602161076555888379
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1341605174942213479}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0aa117d44cea2e143bac1ecfc9c927f2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  spriteRenderer: {fileID: 0}
+  jamal: {fileID: 2800000, guid: 324c642845f599949bf79f70faed8e7f, type: 3}
+  gecko: {fileID: 2800000, guid: 1da71a14b13e34044aa378b4b9394390, type: 3}
+  dada: {fileID: 2800000, guid: c4966bae8164b2943b0857468627beca, type: 3}
+  coolJamal: {fileID: 2800000, guid: 36d38564245b1eb4c8ebedc741caf76d, type: 3}
+  mladyJamal: {fileID: 2800000, guid: 9e3b9716392dddb449386bb034aa8fc1, type: 3}
 --- !u!1 &5150728416571194180
 GameObject:
   m_ObjectHideFlags: 0

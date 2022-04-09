@@ -9,6 +9,8 @@ public class PlayerMove : MonoBehaviour
     public float speedX = 2;
     public float speedY = 2;
 
+    public GameObject voiceManager;
+
     PhotonView view;
 
     // Start is called before the first frame update
