@@ -257,10 +257,10 @@ GameObject:
   m_Component:
   - component: {fileID: 7219047763680493890}
   - component: {fileID: 7219047763680493885}
-  - component: {fileID: 7219047763680493884}
   - component: {fileID: 7219047763680493887}
   - component: {fileID: 7219047763680493886}
   - component: {fileID: 7219047763680493881}
+  - component: {fileID: 7219047763680493884}
   - component: {fileID: 7219047763680493880}
   - component: {fileID: 7219047763680493883}
   m_Layer: 0
@@ -335,21 +335,6 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!114 &7219047763680493884
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7219047763680493882}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ee0e8c43756c097438c57fc73b9caa95, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  speedX: 2
-  speedY: 2
-  voiceManager: {fileID: 0}
 --- !u!114 &7219047763680493887
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -408,6 +393,21 @@ MonoBehaviour:
   AutoCreateRecorderIfNotFound: 0
   UsePrimaryRecorder: 1
   SetupDebugSpeaker: 0
+--- !u!114 &7219047763680493884
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7219047763680493882}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ee0e8c43756c097438c57fc73b9caa95, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  speedX: 4
+  speedY: 4
+  voiceManager: {fileID: 0}
 --- !u!114 &7219047763680493880
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -423,6 +423,7 @@ MonoBehaviour:
   playerCamera: {fileID: 7219047763950068652}
   UsernameTextObj: {fileID: 3601523004548941219}
   UsernameText: {fileID: 420804008386319707}
+  moveScript: {fileID: 7219047763680493884}
   increase: 0.05
 --- !u!65 &7219047763680493883
 BoxCollider:

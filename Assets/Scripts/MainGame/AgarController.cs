@@ -12,6 +12,8 @@ public class AgarController : MonoBehaviourPunCallbacks
     public GameObject UsernameTextObj;
     public TextMesh UsernameText;
 
+    public PlayerMove moveScript;
+
     public float increase = 0.5f;
 
     private float temp;
@@ -56,9 +58,11 @@ public class AgarController : MonoBehaviourPunCallbacks
         if (other.gameObject.tag == "food")
         {
             this.transform.localScale += new Vector3(increase,increase,0);
-            playerCamera.transform.position = new Vector3(playerCamera.transform.position.x,playerCamera.transform.position.y,playerCamera.transform.position.z - increase);
-            UsernameTextObj.transform.position = new Vector3(UsernameTextObj.transform.position.x,UsernameTextObj.transform.position.y - 0.5f,UsernameTextObj.transform.position.z);
+            playerCamera.transform.position = new Vector3(playerCamera.transform.position.x,playerCamera.transform.position.y,playerCamera.transform.position.z - increase*2);
+            //UsernameTextObj.transform.position = new Vector3(UsernameTextObj.transform.position.x,UsernameTextObj.transform.position.y - 0.5f,UsernameTextObj.transform.position.z);
             UsernameTextObj.transform.localScale += new Vector3(increase,increase,0);
+            moveScript.speedX += 0.2f;
+            moveScript.speedX += 0.2f;
             Destroy(other.gameObject);
         }
         if (other.gameObject.tag == "player")

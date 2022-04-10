@@ -1057,7 +1057,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c783bd403e5405148b49cf3ecd53bf96, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  playerObj: {fileID: 8242042212146430527, guid: 6a4093f3fec89e349bd0ffd8d2bf858b,
+  playerObj: {fileID: 8242042212146430527, guid: aa150a327d1443644a38ecf70011d9aa,
     type: 3}
   minX: -20
   minY: 20

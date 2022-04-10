@@ -42,7 +42,7 @@ public class CreateAndJoinRooms : MonoBehaviourPunCallbacks
         }
         else if (roomCode == "party")
         {
-            PhotonNetwork.LoadLevel("room_PARTY");
+            PhotonNetwork.LoadLevel("room_DISCO");
         }
         else if (roomCode == "agar")
         {

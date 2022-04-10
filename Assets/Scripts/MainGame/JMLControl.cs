@@ -12,6 +12,8 @@ public class JMLControl : MonoBehaviour
     public Texture dada;
     public Texture coolJamal;
     public Texture mladyJamal;
+    public Texture uwu;
+    public Texture catboyJamal;
 
     private string skinData;
 
@@ -43,6 +45,14 @@ public class JMLControl : MonoBehaviour
         else if (skinData == "mladyJamal")
         {
             spriteRenderer.texture = mladyJamal; 
+        }
+        else if (skinData == "uwu")
+        {
+            spriteRenderer.texture = uwu; 
+        }
+        else if (skinData == "catboyJamal")
+        {
+            spriteRenderer.texture = catboyJamal; 
         }
         else
         {

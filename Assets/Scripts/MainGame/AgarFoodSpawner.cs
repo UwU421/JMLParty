@@ -29,7 +29,7 @@ public class AgarFoodSpawner : MonoBehaviour
     [PunRPC]
     IEnumerator SpawnFood(string text)
     {
-        yield return new WaitForSeconds(Random.Range(1f, 5f));
+        yield return new WaitForSeconds(Random.Range(0.1f, 2f));
         Vector3 randomPosition = new Vector3(Random.Range(minX,maxX),Random.Range(minY,maxY),0);
         PhotonNetwork.Instantiate(foodObj.name, randomPosition, Quaternion.identity);
         StartCoroutine("SpawnFood","hi");

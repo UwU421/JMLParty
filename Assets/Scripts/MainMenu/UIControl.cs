@@ -9,18 +9,18 @@ public class UIControl : MonoBehaviour
     public InputField secretInput;
     public Text secretText;
 
-    string[,] secrets = {{"jamal","jamal"},{"chemie","gecko"},{"davidek :)","dada"},{"B)","coolJamal"},{"*tips fedora*","mladyJamal"}};
+    string[,] secrets = {{"jamal","jamal"},{"chemie","gecko"},{"davidek :)","dada"},{"B)","coolJamal"},{"*tips fedora*","mladyJamal"},{"UWU","uwu"},{"abomination","catboyJamal"}};
 
     private string text;
     private bool found = false;
 
     public void CheckSecret()
     {
-        text = secretInput.text;
+        text = secretInput.text.ToUpper();
         for (int i = 0; i < secrets.Length/2; i++)
         {
             Debug.Log(i);
-            if (secrets[i,0] == text)
+            if (secrets[i,0].ToUpper() == text)
             {
                 found = true;
                 PlayerPrefs.SetString("skin", secrets[i,1]);
