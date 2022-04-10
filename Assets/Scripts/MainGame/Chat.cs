@@ -33,7 +33,7 @@ public class Chat : MonoBehaviourPunCallbacks
         {
             if (!DisableSend && ChatInputField.isFocused)
             {
-                if (ChatInputField.text != "" && ChatInputField.text.Length > 0 && Input.GetKeyDown("space"))
+                if (ChatInputField.text != "" && ChatInputField.text.Length > 0 && Input.GetKey("return"))
                 {
                     DisableSend = true;
                     text = ChatInputField.text;
