@@ -90,8 +90,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ee0e8c43756c097438c57fc73b9caa95, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speedX: 125
-  speedY: 125
+  speedX: 175
+  speedY: 175
   voiceManager: {fileID: 0}
 --- !u!114 &5752349999948890522
 MonoBehaviour:
@@ -169,6 +169,7 @@ MonoBehaviour:
   mladyJamal: {fileID: 2800000, guid: 9e3b9716392dddb449386bb034aa8fc1, type: 3}
   uwu: {fileID: 2800000, guid: 131fa6b0d0c86ba4688cf6f1113544ac, type: 3}
   catboyJamal: {fileID: 2800000, guid: 5d8cefafc16d2ed48b1cb0703ed3b2b6, type: 3}
+  holyJamal: {fileID: 2800000, guid: 91aba7f48d4252f48ab986cb40063e8b, type: 3}
 --- !u!1 &5150728416571194180
 GameObject:
   m_ObjectHideFlags: 0

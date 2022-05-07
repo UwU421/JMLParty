@@ -12,7 +12,7 @@ EditorBuildSettings:
     path: Assets/Scenes/MainMenu.unity
     guid: 9fc0d4010bbf28b4594072e72b8655ab
   - enabled: 1
-    path: Assets/Scenes/Test.unity
+    path: Assets/Scenes/TestNew.unity
     guid: 552eb32f0279e3341a223453ee228453
   - enabled: 1
     path: Assets/Scenes/room_AGAR.unity
@@ -23,4 +23,13 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/room_JAMAL.unity
     guid: 0d25226529fd2c1428949679490aef4f
+  - enabled: 1
+    path: Assets/Scenes/room_MATHE.unity
+    guid: f4e5cceefce4875448cecea04921f60f
+  - enabled: 1
+    path: Assets/Scenes/room_3DJML.unity
+    guid: 2cb5b0f792b083e4aa653eea5fea033b
+  - enabled: 1
+    path: Assets/Scenes/Test.unity
+    guid: 437e03903eb4b274ab47efcc5340b210
   m_configObjects: {}

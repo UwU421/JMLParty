@@ -46,6 +46,11 @@ MonoBehaviour:
   - HeresWhy
   - DisplayUsername
   - SpawnFood
+  - DisplayQuestion
+  - DisplayText
+  - ChangeSprite
+  - JoinMainGame
+  - ShowBTN
   DisableAutoOpenWizard: 1
   ShowSettings: 1
   DevRegionSetOnce: 1

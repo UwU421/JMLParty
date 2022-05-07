@@ -8,7 +8,7 @@ using Photon.Realtime;
 public class AgarController : MonoBehaviourPunCallbacks
 {
 
-    public GameObject playerCamera;
+    public Camera playerCamera;
     public GameObject UsernameTextObj;
     public TextMesh UsernameText;
 
@@ -23,8 +23,9 @@ public class AgarController : MonoBehaviourPunCallbacks
     void Start()
     {
         view = GetComponent<PhotonView>();
+        playerCamera.enabled = view.IsMine;
         if(view.IsMine){
-            view.RPC("DisplayUsername", RpcTarget.All,view.Owner.NickName);
+            view.RPC("DisplayUsername", RpcTarget.All,view.Owner.NickName); 
         }
     }
 

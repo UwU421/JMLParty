@@ -48,6 +48,18 @@ public class CreateAndJoinRooms : MonoBehaviourPunCallbacks
         {
             PhotonNetwork.LoadLevel("room_AGAR");
         }
+        else if (roomCode == "hilska")
+        {
+            PhotonNetwork.LoadLevel("room_MATHE");
+        }
+        else if (roomCode == "3D")
+        {
+            PhotonNetwork.LoadLevel("room_3DJML");
+        }
+        else if (roomCode == "test")
+        {
+            PhotonNetwork.LoadLevel("TestNew");
+        }
         else
         {
             PhotonNetwork.LoadLevel("Test");

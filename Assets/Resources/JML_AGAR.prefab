@@ -372,7 +372,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_SynchronizePosition: 1
   m_SynchronizeRotation: 0
-  m_SynchronizeScale: 0
+  m_SynchronizeScale: 1
   m_UseLocal: 1
 --- !u!114 &7219047763680493881
 MonoBehaviour:
@@ -420,7 +420,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e703ac44b84776548aaaaae8e85f2ef1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  playerCamera: {fileID: 7219047763950068652}
+  playerCamera: {fileID: 7219047763950068658}
   UsernameTextObj: {fileID: 3601523004548941219}
   UsernameText: {fileID: 420804008386319707}
   moveScript: {fileID: 7219047763680493884}
