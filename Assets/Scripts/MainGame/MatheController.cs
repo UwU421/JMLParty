@@ -21,12 +21,23 @@ public class MatheController : MonoBehaviourPunCallbacks
     private string question;
     private string temp;
 
+    public int points = 0;
+
+    public GameObject resultObj;
+    public Text resultText;
+    public GameObject rewardObj;
+
     public PhotonView view;
 
     // Start is called before the first frame update
     void Start()
     {
         view = GetComponent<PhotonView>();
+        resultObj = GameObject.Find("results");
+        resultText = GameObject.Find("txt_ResultDesc").GetComponent<Text>();
+        rewardObj = GameObject.Find("txt_GotMoney");
+        resultObj.gameObject.SetActive(false);
+        rewardObj.gameObject.SetActive(false);
         if (PhotonNetwork.IsMasterClient)
         {
         AskQuestion();
@@ -80,6 +91,10 @@ public class MatheController : MonoBehaviourPunCallbacks
         {
             answered = true;
             temp = "Správně odpověděl " + username + "! Správná odpověď: " + answer;
+            if (view.IsMine)
+            {
+                points++;
+            }
             view.RPC("DisplayText", RpcTarget.All,temp);
         }
     }
@@ -93,18 +108,12 @@ public class MatheController : MonoBehaviourPunCallbacks
         if (PhotonNetwork.IsMasterClient)
             {
                 yield return new WaitForSeconds(6f);
-            }
-        if (!answered)
-        {
-            answered = true;
-            temp = ("Nikdo neodpověděl! Správná odpověď je " + answer);
-            matheText.text = temp;  
-            if (PhotonNetwork.IsMasterClient)
+            if (!answered)
             {
-            yield return new WaitForSeconds(2.5f);
-            AskQuestion();
+                view.RPC("DisplayText", RpcTarget.All, "Nikdo neodpověděl! Správná odpověď je " + answer);
             }
         }
+        
     }
 
     [PunRPC]
@@ -112,10 +121,13 @@ public class MatheController : MonoBehaviourPunCallbacks
     {
         answered = true;
         matheText.text = text;
-        if (PhotonNetwork.IsMasterClient)
-        {
         yield return new WaitForSeconds(2.5f);
-        AskQuestion();
+        if (points >= 5)
+        {
+            view.RPC("GameEnd", RpcTarget.All, view.Owner.NickName);
+        } else if (PhotonNetwork.IsMasterClient)
+        {
+            AskQuestion();
         }
     }
 
@@ -124,5 +136,19 @@ public class MatheController : MonoBehaviourPunCallbacks
     {
         yield return new WaitForSeconds(0.1f);
         answer = num;
+    }
+
+    [PunRPC]
+    IEnumerator GameEnd(string playerName)
+    {
+        yield return new WaitForSeconds(0.1f);
+        resultObj.SetActive(true);
+        resultText.text = "Winner: " + playerName;
+        matheText.gameObject.SetActive(false);
+        if(view.Owner.NickName == playerName)
+            {
+            PlayerPrefs.SetInt("jmlcoins", PlayerPrefs.GetInt("jmlcoins") + 5);
+            rewardObj.gameObject.SetActive(true);
+        }
     }
 }

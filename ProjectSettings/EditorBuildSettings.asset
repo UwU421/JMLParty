@@ -27,7 +27,7 @@ EditorBuildSettings:
     path: Assets/Scenes/room_JAMAL.unity
     guid: 0d25226529fd2c1428949679490aef4f
   - enabled: 1
-    path: Assets/Scenes/room_MATHE.unity
+    path: Assets/Scenes/Minigames/Mathe/room_MATHE.unity
     guid: f4e5cceefce4875448cecea04921f60f
   - enabled: 1
     path: Assets/Scenes/room_3DJML.unity

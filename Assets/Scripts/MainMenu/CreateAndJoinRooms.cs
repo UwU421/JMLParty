@@ -4,7 +4,7 @@ using UnityEngine;
 using UnityEngine.UI;
 using Photon.Pun;
 
-public class CreateAndJoinRooms : MonoBehaviourPunCallbacks
+public class CreateAndJoinRooms : MonoBehaviourPunCallbacks //, PhotonHandler , OnJoinedInstantiate, IMatchmakingCallbacks, MatchMakingCallbacksContainer, SupportLogger
 {
 
     public InputField roomCodeInput;
@@ -31,6 +31,7 @@ public class CreateAndJoinRooms : MonoBehaviourPunCallbacks
         PlayerPrefs.SetString("prevNick", nickInput.text);
         PlayerPrefs.Save();
         roomCode = roomCodeInput.text;
+        Debug.Log("hi");
         PhotonNetwork.JoinRoom(roomCodeInput.text);
     }
 
@@ -74,4 +75,9 @@ public class CreateAndJoinRooms : MonoBehaviourPunCallbacks
         }
     }
 
+
+    public virtual void OnJoinRoomFailed()
+    {
+        Debug.Log(":(");
+    }
 }

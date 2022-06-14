@@ -7,7 +7,7 @@ using Photon.Realtime;
 public class BullshitController : MonoBehaviourPunCallbacks
 {
     public int deadPlayers = 0;
-    public bool[] deaths = new bool[PhotonNetwork.CurrentRoom.PlayerCount];
+    public bool[] deaths;
     public float[] spawnTimeRange = {2f,8f};
 
     public int currentDeath;
@@ -20,6 +20,7 @@ public class BullshitController : MonoBehaviourPunCallbacks
     void Start()
     {     
         view = GetComponent<PhotonView>();
+        deaths = new bool[PhotonNetwork.CurrentRoom.PlayerCount];
         if (PhotonNetwork.IsMasterClient)
         {
             for (int i = 0;i<PhotonNetwork.CurrentRoom.PlayerCount;i++)

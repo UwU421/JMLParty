@@ -144,6 +144,7 @@ public class DodgeCollision : MonoBehaviourPunCallbacks
             if (view.Owner.NickName == bestPlayerName)
             {
                 PlayerPrefs.SetInt("jmlcoins", PlayerPrefs.GetInt("jmlcoins") + 5);
-            }
+                rewardObj.gameObject.SetActive(true);
+        }
     }
 }
