@@ -10,7 +10,9 @@ public class LobbyController : MonoBehaviourPunCallbacks
 
     public GameObject StartGameBtn;
     public Text StartText;
+    public string[] games = {"JMLDodge"};
     private int x;
+
 
     PhotonView view;
     
@@ -19,7 +21,7 @@ public class LobbyController : MonoBehaviourPunCallbacks
         view = GetComponent<PhotonView>();
         StartGameBtn.SetActive(false);
         StartText.gameObject.SetActive(false);
-        if (PhotonNetwork.CurrentRoom.PlayerCount >= 2)
+        if (PhotonNetwork.CurrentRoom.PlayerCount >= 1)
         {
             view.RPC("ShowBTN", RpcTarget.All,"ha");
         }
@@ -35,10 +37,7 @@ public class LobbyController : MonoBehaviourPunCallbacks
 
     public void StartBtnClick()
     {
-        if (view.IsMine)
-        {
         view.RPC("JoinMainGame", RpcTarget.All,"ha");
-        }
     }
 
     [PunRPC]
@@ -53,8 +52,7 @@ public class LobbyController : MonoBehaviourPunCallbacks
             x--;
         }
         yield return new WaitForSeconds(0.2f);
-        Debug.Log("hi");
-        PhotonNetwork.LoadLevel("room_DISCO");
+        PhotonNetwork.LoadLevel(games[Random.Range(0, games.Length)] + "_Intro");
     }
 
     [PunRPC]

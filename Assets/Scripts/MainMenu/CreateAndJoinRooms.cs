@@ -60,6 +60,14 @@ public class CreateAndJoinRooms : MonoBehaviourPunCallbacks
         {
             PhotonNetwork.LoadLevel("TestNew");
         }
+        else if (roomCode == "huhu")
+        {
+            PhotonNetwork.LoadLevel("JMLDodge");
+        }
+        else if (roomCode == "eg")
+        {
+            PhotonNetwork.LoadLevel("Bullshit");
+        }
         else
         {
             PhotonNetwork.LoadLevel("Test");

@@ -15,6 +15,7 @@ public class MatheController : MonoBehaviourPunCallbacks
     private int num1;
     private int num2;
     private int answer;
+    private int tempNum;
 
     public bool answered = false;
     private string question;
@@ -26,7 +27,10 @@ public class MatheController : MonoBehaviourPunCallbacks
     void Start()
     {
         view = GetComponent<PhotonView>();
+        if (PhotonNetwork.IsMasterClient)
+        {
         AskQuestion();
+        }
     }
 
     public void AskQuestion()
@@ -40,29 +44,32 @@ public class MatheController : MonoBehaviourPunCallbacks
             answer = num1 + num2;
             question = "Kolik je " + num1.ToString() + " + " + num2.ToString() + "?";
             view.RPC("DisplayQuestion", RpcTarget.All,question);
+            view.RPC("SetAnswer", RpcTarget.All,num1 + num2);
             break;
         case 2:
             num1 = Random.Range(1,99);
             do {
             num2 = Random.Range(1,99);
             } while (num2 > num1);
-            answer = num1 - num2;
             question = "Kolik je " + num1.ToString() + " - " + num2.ToString() + "?";
             view.RPC("DisplayQuestion", RpcTarget.All,question);
+            view.RPC("SetAnswer", RpcTarget.All,num1 - num2);
             break;
         case 3:
             num1 = Random.Range(1,10);
             num2 = Random.Range(1,10);
-            answer = num1 * num2;
             question = "Kolik je " + num1.ToString() + " * " + num2.ToString() + "?";
             view.RPC("DisplayQuestion", RpcTarget.All,question);
+            view.RPC("SetAnswer", RpcTarget.All,num1 * num2);
             break;
         case 4:
             num2 = Random.Range(1,10);
             answer = Random.Range(1,10);
+            tempNum = answer;
             num1 = answer * num2;
             question = "Kolik je " + num1.ToString() + " / " + num2.ToString() + "?";
             view.RPC("DisplayQuestion", RpcTarget.All,question);
+            view.RPC("SetAnswer", RpcTarget.All,tempNum);
             break;
         }
     }
@@ -83,22 +90,39 @@ public class MatheController : MonoBehaviourPunCallbacks
         answered = false;
         matheText.text = text;
         Debug.Log("aaa");
-        yield return new WaitForSeconds(6f);
+        if (PhotonNetwork.IsMasterClient)
+            {
+                yield return new WaitForSeconds(6f);
+            }
         if (!answered)
         {
             answered = true;
             temp = ("Nikdo neodpověděl! Správná odpověď je " + answer);
-            matheText.text = text; 
+            matheText.text = temp;  
+            if (PhotonNetwork.IsMasterClient)
+            {
             yield return new WaitForSeconds(2.5f);
             AskQuestion();
+            }
         }
     }
 
     [PunRPC]
     IEnumerator DisplayText(string text)
     {
+        answered = true;
         matheText.text = text;
+        if (PhotonNetwork.IsMasterClient)
+        {
         yield return new WaitForSeconds(2.5f);
         AskQuestion();
+        }
+    }
+
+    [PunRPC]
+    IEnumerator SetAnswer(int num)
+    {
+        yield return new WaitForSeconds(0.1f);
+        answer = num;
     }
 }

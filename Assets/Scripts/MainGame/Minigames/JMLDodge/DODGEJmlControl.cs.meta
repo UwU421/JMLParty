@@ -1,0 +1,20 @@
+fileFormatVersion: 2
+guid: 91df8c82a94f2b74e9c6995c0078bdf5
+MonoImporter:
+  externalObjects: {}
+  serializedVersion: 2
+  defaultReferences:
+  - spriteRenderer: {instanceID: 0}
+  - jamal: {fileID: 2800000, guid: 324c642845f599949bf79f70faed8e7f, type: 3}
+  - gecko: {fileID: 21300000, guid: 40779194db43ff54a8d98dc14120d5c2, type: 3}
+  - dada: {fileID: 21300000, guid: 335943cdec1426040992769e385ba69f, type: 3}
+  - coolJamal: {fileID: 2800000, guid: 36d38564245b1eb4c8ebedc741caf76d, type: 3}
+  - mladyJamal: {fileID: 2800000, guid: 9e3b9716392dddb449386bb034aa8fc1, type: 3}
+  - uwu: {fileID: 2800000, guid: 131fa6b0d0c86ba4688cf6f1113544ac, type: 3}
+  - catboyJamal: {fileID: 2800000, guid: 5d8cefafc16d2ed48b1cb0703ed3b2b6, type: 3}
+  - holyJamal: {fileID: 2800000, guid: 91aba7f48d4252f48ab986cb40063e8b, type: 3}
+  executionOrder: 0
+  icon: {instanceID: 0}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

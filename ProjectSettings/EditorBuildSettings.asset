@@ -7,6 +7,9 @@ EditorBuildSettings:
   m_Scenes:
   - enabled: 1
     path: Assets/Scenes/Loading.unity
+    guid: b4abcfbced46cae4694b2a69b69b6a9a
+  - enabled: 1
+    path: Assets/Scenes/LoadingMeme.unity
     guid: e8a494aa5ca337a41bf1ba6edd0300e0
   - enabled: 1
     path: Assets/Scenes/MainMenu.unity
@@ -32,4 +35,16 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Test.unity
     guid: 437e03903eb4b274ab47efcc5340b210
+  - enabled: 1
+    path: Assets/Scenes/Minigames/JMLDodge/JMLDodge.unity
+    guid: 97c2bef465c8777459ff4917e73f801c
+  - enabled: 1
+    path: Assets/Scenes/Minigames/JMLDodge/JMLDodge_Intro.unity
+    guid: e4943f31548504645959dab52ac7f4d4
+  - enabled: 1
+    path: Assets/Scenes/Minigames/Bullshit/Bullshit.unity
+    guid: 1d1d2f5e25bd0a84eb715fdd25ded7a7
+  - enabled: 1
+    path: Assets/Scenes/Minigames/Bullshit/Bullshit_Intro.unity
+    guid: d0551de75ff2be240b53d84615abfc3c
   m_configObjects: {}
