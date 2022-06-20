@@ -51,7 +51,7 @@ public class CreateAndJoinRooms : MonoBehaviourPunCallbacks //, PhotonHandler , 
         }
         else if (roomCode == "hilska")
         {
-            PhotonNetwork.LoadLevel("room_MATHE");
+            PhotonNetwork.LoadLevel("Mathe");
         }
         else if (roomCode == "3D")
         {

@@ -10,7 +10,7 @@ public class LobbyController : MonoBehaviourPunCallbacks
 
     public GameObject StartGameBtn;
     public Text StartText;
-    public string[] games = {"JMLDodge"};
+    public string[] games = {"JMLDodge","Bullshit","Mathe"};
     private int x;
 
 

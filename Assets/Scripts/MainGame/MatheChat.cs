@@ -15,14 +15,15 @@ public class MatheChat : MonoBehaviourPunCallbacks
 
     private bool DisableSend = false;
     private string text;
+    private int points = 0;
 
-    public MatheController mathe;
+    public MatheController2 mathe;
 
     void Start()
     {
         view = GetComponent<PhotonView>();
         ChatInputField = GameObject.Find("input_chat").GetComponent<InputField>();
-        mathe = (MatheController) GameObject.Find("MatheManager").GetComponent(typeof(MatheController));
+        mathe = (MatheController2) GameObject.Find("MatheManager").GetComponent(typeof(MatheController2));
         if(view.IsMine){
             //UsernameText.text = view.Owner.NickName;
             Debug.Log("ah " + view.Owner.NickName);
@@ -57,8 +58,22 @@ public class MatheChat : MonoBehaviourPunCallbacks
     {     
         if (!mathe.answered)
         {
-            Debug.Log("CUM");
-            mathe.Answered(view.Owner.NickName,answr);
+            //mathe.Answered(view.Owner.NickName,answr);
+            if (answr == mathe.answer.ToString())
+            {
+                mathe.answered = true;
+                if (view.IsMine)
+                {
+                    Debug.Log("ohoho");
+                    points++;
+                    if (points >= 5)
+                    {
+                        Debug.Log("hi :))))");
+                        mathe.view.RPC("GameEnd", RpcTarget.All, view.Owner.NickName);
+                    }
+                }
+                mathe.view.RPC("DisplayText", RpcTarget.All,"Správně odpověděl " + view.Owner.NickName + "! Správná odpověď: " + answr);
+            }
         }
     }
 

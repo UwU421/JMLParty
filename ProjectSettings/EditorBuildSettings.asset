@@ -26,9 +26,9 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/room_JAMAL.unity
     guid: 0d25226529fd2c1428949679490aef4f
-  - enabled: 1
-    path: Assets/Scenes/Minigames/Mathe/room_MATHE.unity
-    guid: f4e5cceefce4875448cecea04921f60f
+  - enabled: 0
+    path: 
+    guid: 00000000000000000000000000000000
   - enabled: 1
     path: Assets/Scenes/room_3DJML.unity
     guid: 2cb5b0f792b083e4aa653eea5fea033b
@@ -47,4 +47,10 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Minigames/Bullshit/Bullshit_Intro.unity
     guid: d0551de75ff2be240b53d84615abfc3c
+  - enabled: 1
+    path: Assets/Scenes/Minigames/Mathe/Mathe.unity
+    guid: bd60f2c3b759a0745b67da214b3dcbe1
+  - enabled: 1
+    path: Assets/Scenes/Minigames/Mathe/Mathe_Intro.unity
+    guid: 5d8841b377f419a419f03e7e2ff4963d
   m_configObjects: {}
