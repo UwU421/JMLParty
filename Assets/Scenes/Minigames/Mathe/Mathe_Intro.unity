@@ -645,7 +645,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   countDownText: {fileID: 1013815981}
-  minigameName: JMLDodge
+  minigameName: Mathe
 --- !u!4 &1760901451
 Transform:
   m_ObjectHideFlags: 0

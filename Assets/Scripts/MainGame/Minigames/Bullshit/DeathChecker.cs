@@ -7,13 +7,14 @@ using Photon.Realtime;
 public class DeathChecker : MonoBehaviour
 {
 
-    PhotonView view;
+    public PhotonView view;
 
     void Start()
     {     
         view = GetComponent<PhotonView>();
     }
 
+    [PunRPC]
     public void CheckDeath(int playerIndex)
     {
         Debug.Log(view.ViewID);
@@ -23,4 +24,5 @@ public class DeathChecker : MonoBehaviour
             this.gameObject.SetActive(false);
         }
     }
+
 }

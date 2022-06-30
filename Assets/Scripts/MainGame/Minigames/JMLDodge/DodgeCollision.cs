@@ -145,6 +145,15 @@ public class DodgeCollision : MonoBehaviourPunCallbacks
             {
                 PlayerPrefs.SetInt("jmlcoins", PlayerPrefs.GetInt("jmlcoins") + 5);
                 rewardObj.gameObject.SetActive(true);
-        }
+            } else {
+                rewardObj.gameObject.SetActive(false);
+            }
+            StartCoroutine("JoinLobby");
+    }
+
+    IEnumerator JoinLobby()
+    {
+        yield return new WaitForSeconds(6);
+        PhotonNetwork.LoadLevel("TestNew");
     }
 }

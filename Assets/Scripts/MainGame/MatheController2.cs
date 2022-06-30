@@ -147,5 +147,12 @@ public class MatheController2 : MonoBehaviourPunCallbacks
             PlayerPrefs.SetInt("jmlcoins", PlayerPrefs.GetInt("jmlcoins") + 5);
             rewardObj.gameObject.SetActive(true);
         }
+        StartCoroutine("JoinLobby");
+    }
+
+    IEnumerator JoinLobby()
+    {
+        yield return new WaitForSeconds(6);
+        PhotonNetwork.LoadLevel("TestNew");
     }
 }

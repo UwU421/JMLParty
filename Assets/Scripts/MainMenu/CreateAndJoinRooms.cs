@@ -67,7 +67,7 @@ public class CreateAndJoinRooms : MonoBehaviourPunCallbacks //, PhotonHandler , 
         }
         else if (roomCode == "eg")
         {
-            PhotonNetwork.LoadLevel("Bullshit");
+            PhotonNetwork.LoadLevel("Bullshit_Intro");
         }
         else
         {
